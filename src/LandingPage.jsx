@@ -3,7 +3,7 @@ import profileImg from './assets/disha_img_lightbg.png';
 function LandingPage({ onEnter }) {
   return (
     <section className="h-screen w-full bg-[#1a1012] flex items-center justify-center">
-      <div className="flex flex-col md:flex-row md:w-1/2 items-center gap max-w-5xl bg-oat-milk rounded-xl border-2">
+      <div className="flex flex-col md:flex-row items-center gap-2 md:gap-8 max-w-[60%] md:max-w-5xl bg-oat-milk rounded-xl border-2 p-3 md:p-0">
         
         {/* Left: Image */}
         <div>
