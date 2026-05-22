@@ -3,26 +3,25 @@ import profileImg from './assets/disha_img_lightbg.png';
 function LandingPage({ onEnter }) {
   return (
     <section className="h-screen w-full bg-[#1a1012] flex items-center justify-center">
-      <div className="flex flex-row items-center gap-2 p-3 max-w-5xl bg-oat-milk rounded-xl border-2 mx-4">
+      <div className="flex flex-col md:flex-row md:w-1/2 items-center gap max-w-5xl bg-oat-milk rounded-xl border-2">
         
         {/* Left: Image */}
         <div>
-          <div className="w-1/2 max-w-35 md:max-w-xs shrink-0">
-             <img src={profileImg} className="w-full h-auto rounded-2xl object-contain" />
+          <div className="">
+             <img src={profileImg} className="md:w-80 rounded-2xl" />
           </div>
         </div>
 
         {/* Right: Intro Text */}
-        <div className="p-2 md:p-5 w-1/2 flex flex-col justify-center">
-          <h1 className="text-2xl font-bold text-red-wine leading-tight md:text-6xl">
-            Disha <br className="md:hidden" /> Jagetia
-          </h1>
-          <p className="text-xs md:text-xl text-red-wine/80 mt-1 md:mt-4 leading-tight">
+        <div className="p-5">
+          <h1 className="text-6xl font-bold text-red-wine pr-5">Disha Jagetia</h1>
+          <p className="text-xl text-red-wine/80 mt-4 max-w-sm leading-relaxed">
             Web Developer and Student
           </p>
-
+          
+          {/* Action Link */}
           <button onClick={onEnter}
-            className="mt-3 px-3 py-1.5 text-xs md:mt-8 md:px-4 md:py-4 md:text-2xl font-bold text-oat-milk rounded-md transition-all bg-red-wine hover:bg-oat-milk hover:text-red-wine hover:border-2 w-max">
+            className="mt-8 px-4 py-4 text-2xl font-bold text-oat-milk rounded-md transition-all bg-red-wine hover:bg-oat-milk hover:text-red-wine hover:border-2">
             View Portfolio
           </button>
         </div>
