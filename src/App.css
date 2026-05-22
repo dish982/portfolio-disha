@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+#home {
+    display: flex;
+    justify-content: left;
+    align-items: start;
+    margin-top: 10rem;
+    margin-left: 5rem;
+}
+
