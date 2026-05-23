@@ -58,7 +58,7 @@ function Skills() {
   return (
   <div id="skills" className="bg-oat-milk min-h-screen">
     <motion.section initial={{opacity: 0, y:60 }} whileInView={{opacity:1, y:0}} transition={{duration: 0.6}}  className='max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30'>
-      <section className="md:p-10">
+      <section className="pt-3 md:p-10">
         <span className=" font-bold text-sm uppercase">My Skills</span><br/>
         <span className="font-serif text-5xl text-[#1a1012] hidden md:block">Skills</span>
         <div>
@@ -140,7 +140,7 @@ function Skills() {
             </div>
             
             {/* Inner Grid for Icons */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
 
             {/* .map() logic starts here */}
             {skillsData[1].skills.map((skill, index) => (
@@ -191,7 +191,7 @@ function Skills() {
             </div>
             
             {/* Inner Grid for Icons */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
 
             {/* .map() logic starts here */}
             {skillsData[2].skills.map((skill, index) => (
@@ -240,7 +240,7 @@ function Skills() {
             </div>
             
             {/* Inner Grid for Icons */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
 
             {/* .map() logic starts here */}
             {skillsData[3].skills.map((skill, index) => (
