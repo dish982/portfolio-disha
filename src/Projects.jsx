@@ -74,7 +74,7 @@ function Projects() {
           {/* project 1 */}
           {projectDetails.map((project, index) => (
             // parent div
-            <div key={index} className="min-w-[85%] md:min-w-137.5 snap-center bg-white/70 border-2 rounded-[2.5rem] mt-10 overflow-hidden md:shadow-sm flex flex-col justify-between">
+            <div key={index} className="min-w-[150%] md:min-w-137.5 snap-center bg-white/70 border-2  rounded-[2.5rem] mt-10 overflow-hidden md:shadow-sm flex flex-col justify-between">
 
               {/* image section */}
               <div className="w-full h-72 relative bg-[#FDE2E4] overflow-hidden group"> 
