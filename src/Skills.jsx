@@ -58,9 +58,9 @@ function Skills() {
   return (
   <div id="skills" className="bg-oat-milk min-h-screen">
     <motion.section initial={{opacity: 0, y:60 }} whileInView={{opacity:1, y:0}} transition={{duration: 0.6}}  className='max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30'>
-      <section className="p-10">
+      <section className="md:p-10">
         <span className=" font-bold text-sm uppercase">My Skills</span><br/>
-        <span className="font-serif text-5xl text-[#1a1012]">Skills</span>
+        <span className="font-serif text-5xl text-[#1a1012] hidden md:block">Skills</span>
         <div>
           <p className="text-black mt-2">Technologies and tools I use to build, analyze,<br/> and solve real-world problems.</p>
         </div>
@@ -82,7 +82,7 @@ function Skills() {
             </div>
             
             {/* Inner Grid for Icons */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
             
             {/* .map() logic starts here */}
             {skillsData[0].skills.map((skill, index) => (
@@ -248,7 +248,7 @@ function Skills() {
 
                 {/* relative + group class parent div */}
                 <div onClick={
-                  () => setActiveSkill(activeSkill === `tools-{index}`? null : `tools-{index}`)
+                  () => setActiveSkill(activeSkill === `tools-${index}`? null : `tools-${index}`)
                 } className=" relative group w-full aspect-square bg-white border border-[#8B2D38]/5 rounded-2xl p-3 flex items-center justify-center shadow-sm">
                   <img 
                     src={skill.img} 
@@ -258,7 +258,7 @@ function Skills() {
 
                   <span className={
                     `absolute inset-0 items-center justify-center bg-blush/60 rounded-2xl text-md font-bold border-2 group-hover:shadow-lg 
-                    ${activeSkill === `tools-{index}` ? 'flex shadow-[0_0_20px_rgba(139,45,56,0.6)]' 
+                    ${activeSkill === `tools-${index}` ? 'flex shadow-[0_0_20px_rgba(139,45,56,0.6)]' 
                       : 'hidden group-hover:flex group-hover:shadow-[0_0_20px_rgba(139,45,56,0.4)]'} `
                   }>
                     {skill.proficiency}%

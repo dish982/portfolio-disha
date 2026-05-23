@@ -17,7 +17,7 @@ function MainPortfolio() {
 
             {/* main section */}
 
-              <div className="max-w-6xl w-full mx-auto p-10 grid md:grid-cols-2 gap-10 items-center">
+              <div className="max-w-6xl w-full mx-auto md:p-10 grid md:grid-cols-2 gap-10 items-center">
 
                   {/* left side */}
                   <div className="flex flex-col max-w-xl space-y-6">
@@ -26,17 +26,17 @@ function MainPortfolio() {
                       About Me
                     </span>
 
-                    <span className="font-serif text-5xl text-[#1a1012]">About</span>
+                    <span className="font-serif text-5xl text-[#1a1012] hidden md:block">About</span>
 
-                    <h1 className="text-3xl font-bold text-red-wine leading-tight">
+                    <h1 className="text-xl md:text-3xl font-bold text-red-wine leading-tight">
                       Hi, I'm Disha Jagetia —  a computer science student building web applications and exploring how technology solves real-world problems.
                     </h1>
 
-                    <p className="text-lg text-(--text-secondary)">
+                    <p className="text-md md:text-lg text-(--text-secondary)">
                       I've worked with <span className="font-semibold text-red-wine leading-relaxed"><i>Node.js, Express, and MongoDB</i></span> to build APIs and backend systems across multiple projects, focusing on clean structure and functionality.
                     </p>
 
-                    <p className="text-lg text-(--text-secondary)">
+                    <p className="text-md md:text-lg text-(--text-secondary)">
                       Alongside development, I've also worked on data analysis using real-world datasets, which helps me approach problems with a more structured and analytical mindset.
                     </p>
 

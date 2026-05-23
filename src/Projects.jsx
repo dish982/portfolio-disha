@@ -64,9 +64,9 @@ function Projects() {
   return (
   <div id="projects" className="bg-oat-milk min-h-screen">
     <motion.section initial={{opacity: 0, y:60 }} whileInView={{opacity:1, y:0}} transition={{duration: 0.6}}  className='max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30'>
-      <section className="p-10">
-        <span className=" font-bold text-sm uppercase">My Projects</span><br/>
-        <span className="font-serif text-5xl text-[#1a1012]">Projects</span>
+      <section className="pt-5 md:p-10">
+        <span className=" font-bold text-xl md:text-sm uppercase ">My Projects</span><br/>
+        <span className="font-serif text-5xl text-[#1a1012] hidden md:block">Projects</span>
         
         {/* main div */}
         <div className="flex gap-6 overflow-x-auto scroll-smooth pb-12 px-4">

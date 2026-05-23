@@ -86,9 +86,9 @@ const handleSubmit = async (e) => {
         <>
     <div id="contact" className="bg-oat-milk">
         <motion.section initial={{opacity: 0, y:60 }} whileInView={{opacity:1, y:0}} transition={{duration: 0.6}}  className='max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30'>
-        <section className="w-full h-auto bg-white px-10 py-20">
+        <section className="w-full h-auto bg-white p-5 md:px-10 md:py-20">
             <span className=" font-bold text-sm uppercase">Contact</span><br/>
-            <span className="font-serif text-5xl text-dark-bg">Contact Me</span>
+            <span className="font-serif text-5xl text-dark-bg hidden md:block">Contact Me</span>
             <div>
                 <p className="text-sm italic text-(--text-muted) pb-2">Whether its for work or just a friendly chat, would love to have a conversation with you!<br/> Do let me know your thoughts on this portfolio!</p>    
             </div>
