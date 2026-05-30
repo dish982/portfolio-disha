@@ -16,11 +16,8 @@ Live Link: [Explore My Live Portfolio](https://dishajagetia.netlify.app/)
 
 ### Dynamic Sections
 - **Skills Matrix:** Grid boards sorting Engineering, Databases, Analytics, and Tools with unique proficiency metrics.
-- **Project Carousel:** Smooth horizontal scrolling (`overflow-x-auto`) list highlighting deployed repositories and current professional roles.
+- **Project Carousel:** Smooth horizontal scrolling list highlighting deployed repositories and current professional roles.
 - **Secure Contact Core:** Form submission system integrated with Cloudflare Turnstile token validation to filter automated spambots.
-
-### Fluid Responsiveness & Layout Architecture
-- Mobile-first breakpoints utilizing tailored classes like `hidden md:block` to maximize visual layout density on small screens while showing full titles on desktop screens.
 
 ---
 
