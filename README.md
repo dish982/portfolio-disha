@@ -1,16 +1,40 @@
-# React + Vite
+# My Portfolio Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hey there! I'm Disha and this Portfolio is my curated digital space! This is a modern, responsive web application built using **React**, **Tailwind CSS**, and **Framer Motion**. It features interactive custom dashboards for skills management, tap-friendly project carousels, dynamic contact layouts with Cloudflare Turnstile security, and complete responsive control for mobile and laptop views.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Live Link: [Explore My Live Portfolio](https://dishajagetia.netlify.app/)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+### Advanced Component Interaction & State Isolation
+- Custom category tracking logic (`dev-`, `data-`, `db-`, `tool-`) ensuring clean, independent tap-to-reveal overlays on mobile devices.
+- Integrated hover-to-zoom scaling for laptop monitors that scales down gracefully into click toggles for real-device layouts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Dynamic Sections
+- **Skills Matrix:** Grid boards sorting Engineering, Databases, Analytics, and Tools with unique proficiency metrics.
+- **Project Carousel:** Smooth horizontal scrolling (`overflow-x-auto`) list highlighting deployed repositories and current professional roles.
+- **Secure Contact Core:** Form submission system integrated with Cloudflare Turnstile token validation to filter automated spambots.
+
+### Fluid Responsiveness & Layout Architecture
+- Mobile-first breakpoints utilizing tailored classes like `hidden md:block` to maximize visual layout density on small screens while showing full titles on desktop screens.
+
+---
+
+## Tech Stack
+
+- **Frontend Core:** React (Vite environment)
+- **Animation Framework:** Framer Motion 
+- **Styling Utility:** Tailwind CSS
+- **Icons Toolkit:** Lucide React, Simple Icons
+- **Security Guardrail:** Cloudflare Turnstile
+
+---
+
+This project is for educational and portfolio purposes only.
+
+## Author
+Made with ❤️ by [Disha](https://github.com/dish982)
