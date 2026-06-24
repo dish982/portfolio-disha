@@ -79,7 +79,7 @@ function MainPortfolio() {
                       Developed REST APIs, CRUD-based systems, and full-stack applications including:
                         <br/>
                         • Bookstore API (Node.js, Express)  <br/>
-                        • File-based blogging platform (Node.js, EJS)   <br/>
+                        • Blogging platform (Node.js, EJS, MongoDB)   <br/>
                         • Task Manager (Frontend + local storage)  <br/>
                         • Shopify e-commerce store  <br/>
                         • Data analysis on large datasets (~200K records) <br/>

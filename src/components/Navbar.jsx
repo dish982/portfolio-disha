@@ -75,16 +75,9 @@ function Navbar() {
                     <NavLinks styles={navLinkStyles} closeMenu = {() => setIsOpen(false)}/>
                 </div>
             )}
-
-
-                
-                
-                
-
             
         </nav>
-
-        
+      
         </>
     )
 }
