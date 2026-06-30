@@ -3,12 +3,15 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
 import { GraduationCap, Briefcase } from 'lucide-react';
+import FloatingLines from './components/FloatingLines'
 import { motion } from "framer-motion";
 
 function MainPortfolio() {
   return (
     <>
-    <div className="bg-oat-milk min-h-screen">
+    
+
+    <div className="min-h-screen">
       <Navbar />
       
 
@@ -26,10 +29,10 @@ function MainPortfolio() {
                       About Me
                     </span>
 
-                    <span className="font-serif text-5xl text-[#1a1012] hidden md:block">About</span>
+                    
 
                     <h1 className="text-xl md:text-3xl font-bold text-red-wine leading-tight">
-                      Hi, I'm Disha Jagetia —  a computer science student building web applications and exploring how technology solves real-world problems.
+                      Hi, I'm Disha Jagetia, a computer science student building web applications and exploring how technology solves real-world problems.
                     </h1>
 
                     <p className="text-md md:text-lg text-(--text-secondary)">

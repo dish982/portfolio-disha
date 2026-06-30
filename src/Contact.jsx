@@ -84,11 +84,11 @@ const handleSubmit = async (e) => {
 
     return(
         <>
-    <div id="contact" className="bg-oat-milk">
+    <div id="contact" className="">
         <motion.section initial={{opacity: 0, y:60 }} whileInView={{opacity:1, y:0}} transition={{duration: 0.6}}  className='max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30'>
         <section className="w-full h-auto bg-white p-5 md:px-10 md:py-20">
             <span className=" font-bold text-sm uppercase">Contact</span><br/>
-            <span className="font-serif text-5xl text-dark-bg hidden md:block">Contact Me</span>
+            {/* <span className="font-serif text-5xl text-dark-bg hidden md:block">Contact Me</span> */}
             <div>
                 <p className="text-sm italic text-(--text-muted) pb-2">Whether its for work or just a friendly chat, would love to have a conversation with you!<br/> Do let me know your thoughts on this portfolio!</p>    
             </div>
@@ -100,11 +100,11 @@ const handleSubmit = async (e) => {
                 <div className="md:w-[35%] flex flex-col">
                       <div className="space-y-6">
                         <div className="p-6 bg-blush rounded-2xl border-2">
-                            <p className="text-xs text-dark-bg uppercase">Email</p>
+                            <p className="text-xs text-red-wine uppercase">Email</p>
                             <p className="font-bold">contact.dishaj@gmail.com</p>
                         </div>
                         <div className="p-6 bg-blush rounded-2xl border-2">
-                            <p className="text-xs text-dark-bg uppercase">Location</p>
+                            <p className="text-xs text-red-wine uppercase">Location</p>
                             <p className="font-bold">Mumbai, India</p>
                         </div>
 
@@ -114,7 +114,7 @@ const handleSubmit = async (e) => {
                                         key={social.name} 
                                         href={social.url} 
                                         target="_blank" 
-                                        className="px-6 py-2 bg-oat-milk hover:bg-blush rounded-full text-sm font-medium hover:border-2"
+                                        className="px-6 py-2 bg-oat-milk hover:bg-blush rounded-full text-sm font-medium"
                                     >
                                         {social.name}
                                     </a>
@@ -177,7 +177,10 @@ const handleSubmit = async (e) => {
 
                     <Turnstile siteKey={import.meta.env.VITE_TURNSTILE_SITE_KEY} theme="light" />
 
-                    <button type="submit" className="w-full py-4 bg-red-wine text-rose-quartz hover:bg-rose-quartz hover:text-red-wine rounded-full font-bold transition-all transform active:scale-95">
+                    <button 
+                    type="submit" 
+                    className="w-full py-4 bg-red-wine text-oat-milk hover:bg-rose-quartz hover:text-red-wine dark:bg-rose-quartz dark:text-dark-bg dark:hover:bg-oat-milk dark:hover:text-red-wine rounded-full font-bold transition-all transform active:scale-95 cursor-pointer"
+                    >
                     Send message
                     </button>
                 </form>

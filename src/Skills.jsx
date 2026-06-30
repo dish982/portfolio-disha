@@ -56,13 +56,12 @@ function Skills() {
   const [activeSkill, setActiveSkill] = useState(null);
 
   return (
-  <div id="skills" className="bg-oat-milk min-h-screen">
+  <div id="skills" className="min-h-screen">
     <motion.section initial={{opacity: 0, y:60 }} whileInView={{opacity:1, y:0}} transition={{duration: 0.6}}  className='max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30'>
       <section className="pt-3 md:p-10">
         <span className=" font-bold text-sm uppercase">My Skills</span><br/>
-        <span className="font-serif text-5xl text-[#1a1012] hidden md:block">Skills</span>
         <div>
-          <p className="text-black mt-2">Technologies and tools I use to build, analyze,<br/> and solve real-world problems.</p>
+          <p className="text-red-wine mt-2">Technologies and tools I use to build, analyze,<br/> and solve real-world problems.</p>
         </div>
 
         {/* main four cards */}
@@ -70,14 +69,14 @@ function Skills() {
           
           {/* --------------------Development card container----------------- */}
 
-          <div className="bg-white/50 border border-[#8B2D38]/10 rounded-xl p-8 shadow-sm">
+          <div className="bg-white/50 border border-border rounded-xl p-8 shadow-sm">
             {/* header (icon+text) */}
             <div className="flex items-start gap-4 mb-8">
-              <div className="w-10 h-10 bg-[#FDE2E4] rounded-2xl flex items-center justify-center text-[#8B2D38] font-bold">{"</>"}</div>     
+              <div className="w-10 h-10 bg-blush rounded-2xl flex items-center justify-center text-red-wine font-bold">{"</>"}</div>     
               {/* title+subtitle */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-serif text-[#4A1D1F]">Development</h3>
-                <p className="text-[10px] text-[#4A1D1F]/60">Frontend, backend and styling technologies.</p>     
+                <h3 className="text-2xl font-serif text-red-wine">Development</h3>
+                <p className="text-[10px] text-red-wine/60">Frontend, backend and styling technologies.</p>     
               </div>
             </div>
             
@@ -94,7 +93,7 @@ function Skills() {
                 }
                 
 
-                className=" relative group w-full aspect-square bg-white border border-[#8B2D38]/5 rounded-2xl p-3 flex items-center justify-center shadow-sm cursor-pointer select-none">
+                className=" relative group w-full aspect-square bg-white border border-red-wine/5 rounded-2xl p-3 flex items-center justify-center shadow-sm cursor-pointer select-none">
                   <img 
                     src={skill.img} 
                     alt={skill.name} 
@@ -112,7 +111,7 @@ function Skills() {
 
                 </div>
                 
-                <span className="text-[10px] font-bold text-[#4A1D1F]/70">
+                <span className="text-[10px] font-bold text-red-wine/70">
                   {skill.name}
                 </span>
 
@@ -126,16 +125,16 @@ function Skills() {
 
 
           {/*---------------- Data analysis card ----------------------*/}
-          <div className="bg-white/50 border border-[#8B2D38]/10 rounded-xl p-8 shadow-sm">
+          <div className="bg-white/50 border border-border rounded-xl p-8 shadow-sm">
             {/* header (icon+text) */}
             <div className="flex items-start gap-4 mb-8">
-              <div className="w-10 h-10 bg-[#FDE2E4] rounded-2xl flex items-center justify-center text-[#8B2D38] font-bold">
+              <div className="w-10 h-10 bg-blush rounded-2xl flex items-center justify-center text-red-wine font-bold">
                 <BarChart2 size={24} strokeWidth={2.5} />
                 </div>     
               {/* title+subtitle */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-serif text-[#4A1D1F]">Data & Analysis</h3>
-                <p className="text-[10px] text-[#4A1D1F]/60">Data analysis and visualization using Python ecosystem.</p>     
+                <h3 className="text-2xl font-serif text-red-wine">Data & Analysis</h3>
+                <p className="text-[10px] text-red-wine/60">Data analysis and visualization using Python ecosystem.</p>     
               </div>
             </div>
             
@@ -150,7 +149,7 @@ function Skills() {
                 <div onClick={
                   () => setActiveSkill(activeSkill === `data-${index}` ? null : `data-${index}`)
                 }
-                className=" relative group w-full aspect-square bg-white border border-[#8B2D38]/5 rounded-2xl p-3 flex items-center justify-center shadow-sm">
+                className=" relative group w-full aspect-square bg-white border border-red-wine/5 rounded-2xl p-3 flex items-center justify-center shadow-sm">
                   <img 
                     src={skill.img} 
                     alt={skill.name} 
@@ -166,7 +165,7 @@ function Skills() {
                   </span>
    
                 </div>
-                <span className="text-[10px] font-bold text-[#4A1D1F]/70">
+                <span className="text-[10px] font-bold text-red-wine/70">
                   {skill.name}
                 </span>
               </div>
@@ -177,16 +176,16 @@ function Skills() {
 
           
           {/* ------------------------Database card---------------------*/}
-          <div className="bg-white/50 border border-[#8B2D38]/10 rounded-xl p-8 shadow-sm">
+          <div className="bg-white/50 border border-border rounded-xl p-8 shadow-sm">
             {/* header (icon+text) */}
             <div className="flex items-start gap-4 mb-8">
-              <div className="w-10 h-10 bg-[#FDE2E4] rounded-2xl flex items-center justify-center text-[#8B2D38] font-bold">
+              <div className="w-10 h-10 bg-blush rounded-2xl flex items-center justify-center text-red-wine font-bold">
                 <Database size={24} strokeWidth={2.5} />
                 </div>     
               {/* title+subtitle */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-serif text-[#4A1D1F]">Databases</h3>
-                <p className="text-[10px] text-[#4A1D1F]/60">Databases I work with to store and manage data</p>     
+                <h3 className="text-2xl font-serif text-red-wine">Databases</h3>
+                <p className="text-[10px] text-red-wine/60">Databases I work with to store and manage data</p>     
               </div>
             </div>
             
@@ -201,7 +200,7 @@ function Skills() {
                 <div onClick={
                   () => setActiveSkill(activeSkill === `db-${index}`? null : `db-${index}`)
                 } 
-                className=" relative group w-full aspect-square bg-white border border-[#8B2D38]/5 rounded-2xl p-3 flex items-center justify-center shadow-sm">
+                className=" relative group w-full aspect-square bg-white border border-red-wine/5 rounded-2xl p-3 flex items-center justify-center shadow-sm">
                   <img 
                     src={skill.img} 
                     alt={skill.name} 
@@ -217,7 +216,7 @@ function Skills() {
                   </span>
 
                 </div>
-                <span className="text-[10px] font-bold text-[#4A1D1F]/70">
+                <span className="text-[10px] font-bold text-red-wine/70">
                   {skill.name}
                 </span>
               </div>
@@ -226,16 +225,16 @@ function Skills() {
           </div>
           
           {/* -----------------------------Tools------------------------------------------- */}
-          <div className="bg-white/50 border border-[#8B2D38]/10 rounded-xl p-8 shadow-sm">
+          <div className="bg-white/50 border border-border rounded-xl p-8 shadow-sm">
             {/* header (icon+text) */}
             <div className="flex items-start gap-4 mb-8">
-              <div className="w-10 h-10 bg-[#FDE2E4] rounded-2xl flex items-center justify-center text-[#8B2D38] font-bold">
+              <div className="w-10 h-10 bg-blush rounded-2xl flex items-center justify-center text-red-wine font-bold">
                 <Wrench size={24} strokeWidth={2.5} />
                 </div>     
               {/* title+subtitle */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-serif text-[#4A1D1F]">Tools</h3>
-                <p className="text-[10px] text-[#4A1D1F]/60">Tools and platforms that help me ship efficiently.</p>     
+                <h3 className="text-2xl font-serif text-red-wine">Tools</h3>
+                <p className="text-[10px] text-red-wine/60">Tools and platforms that help me ship efficiently.</p>     
               </div>
             </div>
             
@@ -249,7 +248,7 @@ function Skills() {
                 {/* relative + group class parent div */}
                 <div onClick={
                   () => setActiveSkill(activeSkill === `tools-${index}`? null : `tools-${index}`)
-                } className=" relative group w-full aspect-square bg-white border border-[#8B2D38]/5 rounded-2xl p-3 flex items-center justify-center shadow-sm">
+                } className=" relative group w-full aspect-square bg-white border border-red-wine/5 rounded-2xl p-3 flex items-center justify-center shadow-sm">
                   <img 
                     src={skill.img} 
                     alt={skill.name} 
@@ -266,7 +265,7 @@ function Skills() {
                 
 
                 </div>
-                <span className="text-[10px] font-bold text-[#4A1D1F]/70">
+                <span className="text-[10px] font-bold text-red-wine/70">
                   {skill.name}
                 </span>
               </div>

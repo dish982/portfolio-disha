@@ -14,10 +14,12 @@
     "@marsidev/react-turnstile": "^1.5.2",
     "@tailwindcss/vite": "^4.2.2",
     "framer-motion": "^12.38.0",
+    "gsap": "^3.15.0",
     "lucide-react": "^1.8.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "tailwindcss": "^4.2.2"
+    "tailwindcss": "^4.2.2",
+    "three": "^0.185.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.4",

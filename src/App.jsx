@@ -5,15 +5,17 @@ import './App.css'
 import LandingPage from './LandingPage'
 import MainPortfolio from './MainPortfolio'
 
+
 function App() {
   const [view, setView] = useState('landing');
 
   return (
-      <main className='min-h-screen w-full transition-all duration-700'>
+      <main className='min-h-screen w-full transition-all duration-700 relative z-10 pointer-events-auto'>
         {view === 'landing' ? (
           <LandingPage onEnter={() => setView('portfolio')} />
         ) : (
           <MainPortfolio />
+          
         )
       }
 
