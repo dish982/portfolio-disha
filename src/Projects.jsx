@@ -1,6 +1,7 @@
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { SiGithub } from '@icons-pack/react-simple-icons';
-import { ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 import projectImg1 from './assets/rest_menu.png';
 import projectImg2 from './assets/projectImg2.png';
 import projectImg3 from './assets/uber_choropleth.png';
@@ -8,9 +9,8 @@ import projectImg4 from './assets/wordweave-preview.png';
 import projectImg5 from './assets/hugging_face_interface.png';
 import projectImg6 from './assets/stitchbydisha.png';
 
-
 const projectDetails = [
-    {
+  {
     title: "Scentivia Perfumes",
     description: "Worked upon this website as a part of my internship. Executing Shopify theme customization and UI/UX enhancements for a luxury perfume brand. This includes managing technical parameters like precise brand hex codes and utilizing Shopify Sidekick for efficient development. ",
     date: "May 2026",
@@ -26,7 +26,7 @@ const projectDetails = [
     link: "https://stitchbydisha.myshopify.com",
     image: projectImg6
   },
-   {
+  {
     title: "RL Environment",
     description: "A Reinforcement Learning (RL) Environment designed to automate the cleaning and validation of KYC (Know Your Customer) records. The agent must learn to categorize data issues and apply the correct processing action to maximize data integrity",
     date: "April 2026",
@@ -58,71 +58,154 @@ const projectDetails = [
     link: "https://menu-filter-disha.netlify.app/",
     image: projectImg1
   },
-]
+];
 
 function Projects() {
+  // Mobile accordion state tracking helper index
+  const [expandedIndex, setExpandedIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setExpandedIndex(expandedIndex === index ? null : index);
+  };
+
   return (
-  <div id="projects" className="min-h-screen">
-    <motion.section initial={{opacity: 0, y:60 }} whileInView={{opacity:1, y:0}} transition={{duration: 0.6}}  className='max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30'>
-      <section className="pt-5 md:p-10">
-        <span className=" font-bold text-xl md:text-sm uppercase ">My Projects</span><br/>
-        {/* <span className="font-serif text-5xl text-[#1a1012] hidden md:block">Projects</span> */}
-        
-        {/* main div */}
-        <div className="flex gap-6 overflow-x-auto scroll-smooth pb-12 px-4">
-          
-          {/* project 1 */}
-          {projectDetails.map((project, index) => (
-            // parent div
-            <div key={index} className="min-w-[150%] md:min-w-137.5 snap-center bg-white/70 border-2  rounded-[2.5rem] mt-10 overflow-hidden md:shadow-sm flex flex-col justify-between">
+    <div id="projects" className="min-h-screen">
+      <motion.section 
+        initial={{ opacity: 0, y: 60 }} 
+        whileInView={{ opacity: 1, y: 0 }} 
+        transition={{ duration: 0.6 }}  
+        className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30"
+      >
+        <section className="pt-5 md:p-10">
+          <span className="font-bold text-xl md:text-sm uppercase text-red-wine">My Projects</span><br/>
 
-              {/* image section */}
-              <div className="w-full h-72 relative bg-[#FDE2E4] overflow-hidden group"> 
-                <img 
-                  src={project.image} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-2xl" 
-                />
+          {/* 📱 MOBILE VIEW: COMPACT ACCORDION (Hidden on Desktop) */}
+          <div className="flex flex-col gap-4 mt-6 pb-6 md:hidden">
+            {projectDetails.map((project, index) => {
+              const isExpanded = expandedIndex === index;
+              return (
+                <div 
+                  key={index} 
+                  className="bg-white border-2 border-red-wine/10 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
+                >
+                  {/* Accordion Trigger Bar */}
+                  <button
+                    onClick={() => toggleAccordion(index)}
+                    className="w-full px-5 py-4 flex items-center justify-between text-left font-serif text-xl text-red-wine bg-white focus:outline-none"
+                  >
+                    <span className="truncate pr-4">{project.title}</span>
+                    <span className="text-red-wine/60 shrink-0">
+                      {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
+                    </span>
+                  </button>
 
-                {/* overlay pill "view project" */}
-                <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">                  
-                    <a href={project.link} target="_blank" className="bg-white/90 backdrop-blur-md text-red-wine px-6 py-2 rounded-full font-bold text-sm shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
+                  {/* Collapsible Details Content */}
+                  <AnimatePresence initial={false}>
+                    {isExpanded && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: "easeInOut" }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-5 pb-5 pt-2 border-t border-red-wine/5 space-y-4 bg-white">
+                          
+                          {/* Preview Image */}
+                          <div className="w-full h-44 bg-oat-milk rounded-xl overflow-hidden relative">
+                            <img 
+                              src={project.image} 
+                              alt={project.title} 
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+
+                          {/* Date and Description */}
+                          <div>
+                            <span className="text-red-wine/50 text-xs block mb-1">{project.date}</span>
+                            <p className="text-red-wine/80 text-sm leading-relaxed">
+                              {project.description}
+                            </p>
+                          </div>
+
+                          {/* Tools Section */}
+                          <div className="flex flex-wrap gap-1.5">
+                            {project.tools.map((tech, idx) => (
+                              <span key={idx} className="px-3 py-1 bg-oat-milk text-red-wine rounded-full text-xs font-bold">
+                                {tech}
+                              </span>
+                            ))}
+                          </div>
+
+                          {/* Redirect Action Trigger Button */}
+                          <div className="pt-2">
+                            <a 
+                              href={project.link} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="w-full bg-red-wine text-white py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md"
+                            >
+                              View Project 
+                              <ArrowUpRight size={16} />
+                            </a>
+                          </div>
+
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* 💻 DESKTOP VIEW: ORIGINAL CAROUSEL (Hidden on Mobile) */}
+          <div className="hidden md:flex gap-6 overflow-x-auto scroll-smooth pb-12 px-4 mt-10">
+            {projectDetails.map((project, index) => (
+              <div key={index} className="min-w-[150%] md:min-w-137.5 snap-center bg-white/70 border-2 rounded-[2.5rem] overflow-hidden md:shadow-sm flex flex-col justify-between">
+
+                {/* image section */}
+                <div className="w-full h-72 relative bg-oat-milk overflow-hidden group"> 
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-2xl" 
+                  />
+
+                  {/* overlay pill "view project" */}
+                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">                  
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="bg-white/90 backdrop-blur-md text-red-wine px-6 py-2 rounded-full font-bold text-sm shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
                       View Project 
                       <ArrowUpRight size={16} />
                     </a>
+                  </div>
                 </div>
-              </div>
-    
-              {/* content section */}
-              <div className="flex-1 p-8 flex flex-col justify-between bg-white">
-                <h3 className="text-4xl font-serif text-red-wine mb-4">{project.title}</h3>
-                <span className="text-red-wine/70 text-sm leading-relaxed mb-6">{project.date}</span>
-                <p className="text-red-wine/80 text-sm leading-relaxed mb-8">
-                  {project.description}
-                </p>
+      
+                {/* content section */}
+                <div className="flex-1 p-8 flex flex-col justify-between bg-white">
+                  <h3 className="text-4xl font-serif text-red-wine mb-4">{project.title}</h3>
+                  <span className="text-red-wine/70 text-sm leading-relaxed mb-6">{project.date}</span>
+                  <p className="text-red-wine/80 text-sm leading-relaxed mb-8">
+                    {project.description}
+                  </p>
 
-                {/* tool pills section */}
-                <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tools.map((tech, index) => 
-                      <span key = {index} className="px-4 py-2 bg-[#FDE2E4]/50 text-red-wine rounded-full text-xs font-bold">
-                    
-                      {tech}
-                    </span>
-                    )}
+                  {/* tool pills section */}
+                  <div className="flex flex-wrap gap-2 mb-8">
+                    {project.tools.map((tech, index) => (
+                      <span key={index} className="px-4 py-2 bg-oat-milk text-red-wine rounded-full text-xs font-bold">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
                 </div>
+
               </div>
-
-              {/* <div className="flex items-center gap-2 text-red-wine/40 italic text-xs border-t border-red-wine/5 pt-6">
-                <a href="https://github.com/dish982/restaurant-menu-filter-page"><SiGithub size={14} /></a>
-              </div> */}
-
-            </div>
-          ))}
-        </div>
-     
-      </section>
-    </motion.section> 
-  </div>
+            ))}
+          </div>
+       
+        </section>
+      </motion.section> 
+    </div>
   );
 }
 
