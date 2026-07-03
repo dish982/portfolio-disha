@@ -1,7 +1,7 @@
 import { Home, User, FileText, Code, Sparkles, Mail, Sun, Moon, Menu, X} from 'lucide-react'
 import { useState, useEffect } from 'react'
 import BubbleMenu from './BubbleMenu'
-import Ferrofluid from './FerroFluid';
+// import Ferrofluid from './FerroFluid';
 
 function Navbar() {
 
@@ -60,7 +60,7 @@ function Navbar() {
     return(
         <>
 
-        <div className='fixed inset-0 -z-10 pointer-events-none w-full h-screen overflow-hidden'>
+        {/* <div className='fixed inset-0 -z-10 pointer-events-none w-full h-screen overflow-hidden'>
 
             <Ferrofluid
                 colors={["#ffffff","#ffffff","#ffffff"]}
@@ -79,7 +79,7 @@ function Navbar() {
                 mouseRadius={0.35}
             />
 
-        </div>
+        </div> */}
 
         {/* <div>
             
