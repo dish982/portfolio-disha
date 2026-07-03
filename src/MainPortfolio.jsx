@@ -3,7 +3,6 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Contact from './Contact';
 import { GraduationCap, Briefcase } from 'lucide-react';
-import FloatingLines from './components/FloatingLines'
 import { motion } from "framer-motion";
 
 function MainPortfolio() {

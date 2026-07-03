@@ -1,7 +1,7 @@
 import { Home, User, FileText, Code, Sparkles, Mail, Sun, Moon, Menu, X} from 'lucide-react'
 import { useState, useEffect } from 'react'
 import BubbleMenu from './BubbleMenu'
-import FloatingLines from './FloatingLines';
+import Ferrofluid from './FerroFluid';
 
 function Navbar() {
 
@@ -15,9 +15,6 @@ function Navbar() {
     }
   }, []);
 
-      const currentGradient = dark 
-        ? ['#4a1525', '#801b36', '#e945f5'] 
-        : ['#9c4a5c', '#c26d7e', '#501220'];
 
         
   const menuItems = [
@@ -64,23 +61,24 @@ function Navbar() {
         <>
 
         <div className='fixed inset-0 -z-10 pointer-events-none w-full h-screen overflow-hidden'>
-            <FloatingLines 
-            enabledWaves={["top","middle","bottom"]}
-            // Array - specify line count per wave; Number - same count for all waves
-            lineCount={8}
-            // Array - specify line distance per wave; Number - same distance for all waves
-            lineDistance={8}
-            bendRadius={8}
-            bendStrength={-2}
-            interactive
-            parallax={true}
-            animationSpeed={1}
-            // gradientStart="#e945f5"
-            // gradientMid="#6f6f6f"
-            // gradientEnd="#6a6a6a"
-            linesGradient={currentGradient}
-            mixBlendMode={dark ? 'screen' : 'multiply'}
+
+            <Ferrofluid
+                colors={["#ffffff","#ffffff","#ffffff"]}
+                speed={0.5}
+                scale={1.6}
+                turbulence={1}
+                fluidity={0.1}
+                rimWidth={0.2}
+                sharpness={2.5}
+                shimmer={1.5}
+                glow={2}
+                flowDirection="down"
+                opacity={1}
+                mouseInteraction
+                mouseStrength={1}
+                mouseRadius={0.35}
             />
+
         </div>
 
         {/* <div>

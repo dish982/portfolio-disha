@@ -75,7 +75,7 @@ function Skills() {
               <div className="w-10 h-10 bg-blush rounded-2xl flex items-center justify-center text-red-wine font-bold">{"</>"}</div>     
               {/* title+subtitle */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-serif text-red-wine">Development</h3>
+                <h3 className="text-2xl text-red-wine">Development</h3>
                 <p className="text-[10px] text-red-wine/60">Frontend, backend and styling technologies.</p>     
               </div>
             </div>
@@ -133,7 +133,7 @@ function Skills() {
                 </div>     
               {/* title+subtitle */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-serif text-red-wine">Data & Analysis</h3>
+                <h3 className="text-2xl text-red-wine">Data & Analysis</h3>
                 <p className="text-[10px] text-red-wine/60">Data analysis and visualization using Python ecosystem.</p>     
               </div>
             </div>
@@ -184,7 +184,7 @@ function Skills() {
                 </div>     
               {/* title+subtitle */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-serif text-red-wine">Databases</h3>
+                <h3 className="text-2xl text-red-wine">Databases</h3>
                 <p className="text-[10px] text-red-wine/60">Databases I work with to store and manage data</p>     
               </div>
             </div>
@@ -233,7 +233,7 @@ function Skills() {
                 </div>     
               {/* title+subtitle */}
               <div className="flex flex-col">
-                <h3 className="text-2xl font-serif text-red-wine">Tools</h3>
+                <h3 className="text-2xl text-red-wine">Tools</h3>
                 <p className="text-[10px] text-red-wine/60">Tools and platforms that help me ship efficiently.</p>     
               </div>
             </div>

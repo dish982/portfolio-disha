@@ -91,7 +91,7 @@ function Projects() {
                   {/* Accordion Trigger Bar */}
                   <button
                     onClick={() => toggleAccordion(index)}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left font-serif text-xl text-red-wine bg-white focus:outline-none"
+                    className="w-full px-5 py-4 flex items-center justify-between text-left text-xl text-red-wine bg-white focus:outline-none"
                   >
                     <span className="truncate pr-4">{project.title}</span>
                     <span className="text-red-wine/60 shrink-0">
@@ -183,7 +183,7 @@ function Projects() {
       
                 {/* content section */}
                 <div className="flex-1 p-8 flex flex-col justify-between bg-white">
-                  <h3 className="text-4xl font-serif text-red-wine mb-4">{project.title}</h3>
+                  <h3 className="text-4xl text-red-wine mb-4">{project.title}</h3>
                   <span className="text-red-wine/70 text-sm leading-relaxed mb-6">{project.date}</span>
                   <p className="text-red-wine/80 text-sm leading-relaxed mb-8">
                     {project.description}
