@@ -93,20 +93,20 @@ function Skills() {
                 }
                 
 
-                className=" relative group w-full aspect-square bg-white border border-red-wine/5 rounded-2xl p-3 flex items-center justify-center shadow-sm cursor-pointer select-none">
+                className=" relative group w-full aspect-square bg-white border border-red-wine/5 rounded-2xl p-3 flex items-center justify-center shadow-sm select-none">
                   <img 
                     src={skill.img} 
                     alt={skill.name} 
                     className="w-10 h-10 object-contain" 
                   />
                   
-                  <span className={
+                  {/* <span className={
                     `absolute inset-0 items-center justify-center bg-blush/60 rounded-2xl text-md font-bold border-2 group-hover:shadow-lg 
                     ${activeSkill === `dev-${index}` ? 'flex shadow-[0_0_20px_rgba(139,45,56,0.6)]' 
                       : 'hidden group-hover:flex group-hover:shadow-[0_0_20px_rgba(139,45,56,0.4)]'} `
                   }>
                     {skill.proficiency}%
-                  </span>
+                  </span> */}
 
 
                 </div>
@@ -156,13 +156,13 @@ function Skills() {
                     className="w-10 h-10 object-contain" 
                   />
 
-                  <span className={
+                  {/* <span className={
                     `absolute inset-0 items-center justify-center bg-blush/60 rounded-2xl text-md font-bold border-2 group-hover:shadow-lg 
                     ${activeSkill === `data-${index}` ? 'flex shadow-[0_0_20px_rgba(139,45,56,0.6)]' 
                       : 'hidden group-hover:flex group-hover:shadow-[0_0_20px_rgba(139,45,56,0.4)]'} `
                   }>
                     {skill.proficiency}%
-                  </span>
+                  </span> */}
    
                 </div>
                 <span className="text-[10px] font-bold text-red-wine/70">
@@ -207,13 +207,13 @@ function Skills() {
                     className="w-10 h-10 object-contain" 
                   />
                   
-                  <span className={
+                  {/* <span className={
                     `absolute inset-0 items-center justify-center bg-blush/60 rounded-2xl text-md font-bold border-2 group-hover:shadow-lg 
                     ${activeSkill === `db-${index}` ? 'flex shadow-[0_0_20px_rgba(139,45,56,0.6)]' 
                       : 'hidden group-hover:flex group-hover:shadow-[0_0_20px_rgba(139,45,56,0.4)]'} `
                   }>
                     {skill.proficiency}%
-                  </span>
+                  </span> */}
 
                 </div>
                 <span className="text-[10px] font-bold text-red-wine/70">
@@ -255,13 +255,13 @@ function Skills() {
                     className="w-10 h-10 object-contain" 
                   />
 
-                  <span className={
+                  {/* <span className={
                     `absolute inset-0 items-center justify-center bg-blush/60 rounded-2xl text-md font-bold border-2 group-hover:shadow-lg 
                     ${activeSkill === `tools-${index}` ? 'flex shadow-[0_0_20px_rgba(139,45,56,0.6)]' 
                       : 'hidden group-hover:flex group-hover:shadow-[0_0_20px_rgba(139,45,56,0.4)]'} `
                   }>
                     {skill.proficiency}%
-                  </span>
+                  </span> */}
                 
 
                 </div>

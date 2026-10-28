@@ -1,41 +1,55 @@
 @import "tailwindcss";
 
 @theme {
-  /* 1. Define your core light palette names */
+  /* existing tokens (slightly refined) */
   --color-rose-quartz: #f9cbd6;
-  --color-blush: #f2afbc;
-  --color-red-wine: #9e182b;
+  --color-blush: #f3dcdd;
+  --color-red-wine: #8e1b34;
   --color-oat-milk: #f2e0d2;
-
-  /* 2. Define your standalone dark palette colors */
   --color-dark-bg: #1a1012;
   --color-dark-surface: #2d1b1e;
+
+  /* new semantic tokens (light mode defaults) */
+  --color-cream: #fbf6f1;        /* page background */
+  --color-surface: #ffffff;      /* cards */
+  --color-heading: #8e1b34;      /* headings */
+  --color-accent: #8e1b34;       /* icons, highlights, links */
+  --color-ink: #2a1a1d;          /* body text */
+  --color-ink-muted: #6b5a5e;    /* secondary text */
+  --color-feature: #8e1b34;      /* Education card bg */
+  --color-on-feature: #ffffff;
+  --color-line: #e8dcd3;         /* borders */
+  --color-sage-soft: #e6eee4;    /* pill bg */
+  --color-sage-ink: #4f6b50;     /* pill text, quote bar */
 }
 
-/* 3. Cohesive Crimson Dark Mode Overrides (No Pink Text) */
 .dark {
-  /* Keep your deep maroon/brown backgrounds */
-  --color-oat-milk: var(--color-dark-bg);      /* Main background */
-  --color-white: var(--color-dark-surface);    /* Container card background */
-  
-  /* Sub-cards (like the Education box) become slightly deeper maroon for contrast */
-  --color-blush: #1f1113; 
-  
-  /* 🌟 Typography Updates: No more pink text! */
-  --color-red-wine: #ffffff;                  /* Main headings & titles become crisp white */
-  --color-rose-quartz: #f2e0d2;               /* Paragraph descriptions become soft cream/oat-milk */
-  
-  /* Borders shift to a subtle deep wine tint */
+  /* your existing overrides, unchanged */
+  --color-oat-milk: var(--color-dark-bg);
+  --color-white: var(--color-dark-surface);
+  --color-blush: #1f1113;
+  --color-red-wine: #ffffff;
+  --color-rose-quartz: #f2e0d2;
   --color-border: #42282c;
+
+  /* new semantic tokens for dark */
+  --color-cream: #1a1012;
+  --color-surface: #2d1b1e;
+  --color-heading: #ffffff;
+  --color-accent: #e58a9b;
+  --color-ink: #f5ebe4;
+  --color-ink-muted: #c9b8b3;
+  --color-feature: #4a1420;
+  --color-line: #42282c;
+  --color-sage-soft: #26332a;
+  --color-sage-ink: #a9c4aa;
+
+  --color-on-feature: #f5ebe4;
+  --color-feature: #6e1b2e;
 }
 
-.dark .border {
-  border-color: var(--color-border);
-}
-
-/* Fallback base rules for your layout background */
 body {
-  background-color: var(--color-oat-milk);
-  color: var(--color-red-wine);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
   transition: background-color 0.3s ease, color 0.3s ease;
 }

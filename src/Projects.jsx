@@ -1,210 +1,188 @@
-import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { SiGithub } from '@icons-pack/react-simple-icons';
-import { ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
-import projectImg1 from './assets/rest_menu.png';
-import projectImg2 from './assets/projectImg2.png';
-import projectImg3 from './assets/uber_choropleth.png';
-import projectImg4 from './assets/wordweave-preview.png';
-import projectImg5 from './assets/hugging_face_interface.png';
-import projectImg6 from './assets/stitchbydisha.png';
+import { motion } from "framer-motion";
+import { SiGithub } from "@icons-pack/react-simple-icons";
+import { ArrowUpRight } from "lucide-react";
+import projectImg2 from "./assets/projectImg2.png";
+import projectImg3 from "./assets/uber_choropleth.png";
+import projectImg4 from "./assets/wordweave-preview.png";
+import projectImg6 from "./assets/stitchbydisha.png";
+import projectImg7 from "./assets/plant-disease.png";
 
+// Order matters: strongest / most role-relevant first. The first item is shown as the featured card.
+// links: first link is the primary button, the rest are secondary. Use label "GitHub" to get the GitHub icon.
 const projectDetails = [
   {
+    title: "WordWeave",
+    description:
+      "A blogging platform where users can sign up, write, edit and delete posts, mark them public or private, and search across blogs. Built with Node.js, Express and MongoDB.",
+    date: "July 2025",
+    tools: ["Node.js", "Express", "MongoDB", "EJS"], // update to React after the MERN conversion
+    links: [
+      { label: "GitHub", href: "https://github.com/dish982/WordWeave" },
+      // { label: "Live demo", href: "https://your-render-url.onrender.com" }, // add after deploy
+    ],
+    image: projectImg4,
+  },
+  {
+    title: "Multi-Crop Plant Disease Detection",
+    description:
+      "A deep learning model that detects plant diseases across multiple crops from leaf images, using the PlantifyDR dataset. Supports early detection and smarter crop health management.",
+    date: "September 2026",
+    tools: ["Python", "TensorFlow", "Keras", "MobileNetV3Small", "TensorFlow.js", "Next.js"],
+    links: [
+      {
+        label: "Notebook",
+        href: "https://colab.research.google.com/drive/1TiE25TFcegYhvkbvIyET8W_eqVGwEDHg?usp=sharing",
+      },
+    ],
+    image: projectImg7,
+  },
+  {
+    title: "Uber Dataset Analysis",
+    description:
+      "Exploratory data analysis and distance-based fare prediction on about 200,000 ride records.",
+    date: "December 2025",
+    tools: ["Python", "Pandas", "NumPy"],
+    links: [
+      {
+        label: "Notebook",
+        href: "https://colab.research.google.com/drive/1nMXuyyEzMh1r_Pfhlprxe2taUxX7YGqQ?usp=sharing",
+      },
+    ],
+    image: projectImg3,
+  },
+  {
     title: "Scentivia Perfumes",
-    description: "Worked upon this website as a part of my internship. Executing Shopify theme customization and UI/UX enhancements for a luxury perfume brand. This includes managing technical parameters like precise brand hex codes and utilizing Shopify Sidekick for efficient development. ",
+    description:
+      "Built during my internship: Shopify theme customization and UI/UX improvements for a luxury perfume brand, including exact brand hex codes and faster development with Shopify Sidekick.",
     date: "May 2026",
-    tools: ["Shopify", "Shopify Sidekick"],
-    link: "https://scentivia.shop/",
-    image: projectImg2
+    tools: ["Shopify", "Liquid", "Shopify Sidekick"],
+    links: [{ label: "Visit site", href: "https://scentivia.shop/" }],
+    image: projectImg2,
   },
   {
     title: "StitchByDisha",
-    description: "Explored the backend flow of product management, inventory tracking, and liquid-based theme structures. This is still in development-mode thus it is password protected. If you'd like to explore the full shopping flow, feel free to drop a message in the Contact section and I’ll share the access key immediately!",
+    description:
+      "A Shopify store for my cross-stitch work, where I explored product management, inventory tracking and Liquid theme structure. The store is still in development mode and password protected, so message me in the Contact section for the access key.",
     date: "May 2026",
-    tools: ["Shopify"],
-    link: "https://stitchbydisha.myshopify.com",
-    image: projectImg6
-  },
-  {
-    title: "RL Environment",
-    description: "A Reinforcement Learning (RL) Environment designed to automate the cleaning and validation of KYC (Know Your Customer) records. The agent must learn to categorize data issues and apply the correct processing action to maximize data integrity",
-    date: "April 2026",
-    tools: ["Re-inforcement learning", "Python"],
-    link: "https://github.com/dish982/meta-pytorch-hackathon/",
-    image: projectImg5
-  },
-  {
-    title: "Uber Dataset analysis",
-    description: "Analyzed a dataset of approximately 200,000 records in December 2025 to perform exploratory data analysis and distance-based fare prediction.",
-    date: "December 2025",
-    tools: ["Pandas", "Numpy", "Python"],
-    link: "https://colab.research.google.com/drive/1nMXuyyEzMh1r_Pfhlprxe2taUxX7YGqQ?usp=sharing",
-    image: projectImg3
-  },
-  {
-    title: "WordWeave",
-    description: "A simple blogging platform built with Node.js, Express, MongoDB, and EJS that allows users to create, edit, and delete blog posts.",
-    date: "July 2025",
-    tools: ["Node.js", "Express", "ejs", "MongoDB"],
-    link: "https://github.com/dish982/WordWeave",
-    image: projectImg4
-  },
-  {
-    title: "Restaurant Menu Filter",
-    description: "A simple and responsive Restaurant Menu Filter web page built using HTML, CSS, JavaScript, and Bootstrap. It displays a dummy restaurant menu and allows users to filter items by category, Appetizers, Main Course, Desserts, Beverages, or view the Full Menu.",
-    date: "May 2025",
-    tools: ["Bootstrap", "Vanilla JS"],
-    link: "https://menu-filter-disha.netlify.app/",
-    image: projectImg1
+    tools: ["Shopify", "Liquid"],
+    links: [{ label: "Visit store", href: "https://stitchbydisha.myshopify.com" }],
+    image: projectImg6,
   },
 ];
 
-function Projects() {
-  // Mobile accordion state tracking helper index
-  const [expandedIndex, setExpandedIndex] = useState(null);
+function LinkButtons({ links }) {
+  return (
+    <div className="flex flex-wrap gap-3 mt-auto pt-2">
+      {links.map((link, i) => {
+        const isPrimary = i === 0;
+        const isGithub = link.label === "GitHub";
+        return (
+          <a
+            key={link.href}
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={
+              "inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold transition-colors " +
+              (isPrimary
+                ? "bg-feature text-on-feature hover:opacity-90"
+                : "border border-line text-heading hover:bg-blush")
+            }
+          >
+            {isGithub && <SiGithub size={16} />}
+            {link.label}
+            {!isGithub && <ArrowUpRight size={16} />}
+          </a>
+        );
+      })}
+    </div>
+  );
+}
 
-  const toggleAccordion = (index) => {
-    setExpandedIndex(expandedIndex === index ? null : index);
-  };
+function ToolPills({ tools }) {
+  return (
+    <div className="flex flex-wrap gap-2">
+      {tools.map((tech) => (
+        <span
+          key={tech}
+          className="px-3 py-1 bg-sage-soft text-sage-ink rounded-full text-xs font-semibold"
+        >
+          {tech}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function Projects() {
+  const [featured, ...rest] = projectDetails;
 
   return (
     <div id="projects" className="min-h-screen">
-      <motion.section 
-        initial={{ opacity: 0, y: 60 }} 
-        whileInView={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.6 }}  
-        className="max-w-6xl mx-auto bg-white rounded-3xl shadow-xl mb-20 px-5 mt-30"
+      <motion.section
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        className="max-w-6xl mx-auto bg-surface rounded-3xl shadow-xl mb-20 px-5 mt-30"
       >
-        <section className="pt-5 md:p-10">
-          <span className="font-bold text-xl md:text-sm uppercase text-red-wine">My Projects</span><br/>
+        <section className="pt-5 pb-8 md:p-10">
+          <span className="font-bold text-xs uppercase tracking-widest text-sage-ink">
+            My Projects
+          </span>
+          <p className="text-ink-muted mt-2 mb-8">
+            Full-stack apps, data work and client projects I've built.
+          </p>
 
-          {/* 📱 MOBILE VIEW: COMPACT ACCORDION (Hidden on Desktop) */}
-          <div className="flex flex-col gap-4 mt-6 pb-6 md:hidden">
-            {projectDetails.map((project, index) => {
-              const isExpanded = expandedIndex === index;
-              return (
-                <div 
-                  key={index} 
-                  className="bg-white border-2 border-red-wine/10 rounded-2xl overflow-hidden shadow-sm transition-all duration-300"
-                >
-                  {/* Accordion Trigger Bar */}
-                  <button
-                    onClick={() => toggleAccordion(index)}
-                    className="w-full px-5 py-4 flex items-center justify-between text-left text-xl text-red-wine bg-white focus:outline-none"
-                  >
-                    <span className="truncate pr-4">{project.title}</span>
-                    <span className="text-red-wine/60 shrink-0">
-                      {isExpanded ? <ChevronUp size={20} /> : <ChevronDown size={20} />}
-                    </span>
-                  </button>
-
-                  {/* Collapsible Details Content */}
-                  <AnimatePresence initial={false}>
-                    {isExpanded && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                        className="overflow-hidden"
-                      >
-                        <div className="px-5 pb-5 pt-2 border-t border-red-wine/5 space-y-4 bg-white">
-                          
-                          {/* Preview Image */}
-                          <div className="w-full h-44 bg-oat-milk rounded-xl overflow-hidden relative">
-                            <img 
-                              src={project.image} 
-                              alt={project.title} 
-                              className="w-full h-full object-cover"
-                            />
-                          </div>
-
-                          {/* Date and Description */}
-                          <div>
-                            <span className="text-red-wine/50 text-xs block mb-1">{project.date}</span>
-                            <p className="text-red-wine/80 text-sm leading-relaxed">
-                              {project.description}
-                            </p>
-                          </div>
-
-                          {/* Tools Section */}
-                          <div className="flex flex-wrap gap-1.5">
-                            {project.tools.map((tech, idx) => (
-                              <span key={idx} className="px-3 py-1 bg-oat-milk text-red-wine rounded-full text-xs font-bold">
-                                {tech}
-                              </span>
-                            ))}
-                          </div>
-
-                          {/* Redirect Action Trigger Button */}
-                          <div className="pt-2">
-                            <a 
-                              href={project.link} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="w-full bg-red-wine text-white py-2.5 rounded-xl font-bold text-sm flex items-center justify-center gap-2 shadow-md"
-                            >
-                              View Project 
-                              <ArrowUpRight size={16} />
-                            </a>
-                          </div>
-
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* 💻 DESKTOP VIEW: ORIGINAL CAROUSEL (Hidden on Mobile) */}
-          <div className="hidden md:flex gap-6 overflow-x-auto scroll-smooth pb-12 px-4 mt-10">
-            {projectDetails.map((project, index) => (
-              <div key={index} className="min-w-[150%] md:min-w-137.5 snap-center bg-white/70 border-2 rounded-[2.5rem] overflow-hidden md:shadow-sm flex flex-col justify-between">
-
-                {/* image section */}
-                <div className="w-full h-72 relative bg-oat-milk overflow-hidden group"> 
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 rounded-2xl" 
-                  />
-
-                  {/* overlay pill "view project" */}
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">                  
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="bg-white/90 backdrop-blur-md text-red-wine px-6 py-2 rounded-full font-bold text-sm shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 flex items-center gap-2">
-                      View Project 
-                      <ArrowUpRight size={16} />
-                    </a>
-                  </div>
-                </div>
-      
-                {/* content section */}
-                <div className="flex-1 p-8 flex flex-col justify-between bg-white">
-                  <h3 className="text-4xl text-red-wine mb-4">{project.title}</h3>
-                  <span className="text-red-wine/70 text-sm leading-relaxed mb-6">{project.date}</span>
-                  <p className="text-red-wine/80 text-sm leading-relaxed mb-8">
-                    {project.description}
-                  </p>
-
-                  {/* tool pills section */}
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tools.map((tech, index) => (
-                      <span key={index} className="px-4 py-2 bg-oat-milk text-red-wine rounded-full text-xs font-bold">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
+          {/* featured project: image beside content on desktop */}
+          <article className="grid md:grid-cols-2 bg-cream border border-line rounded-3xl overflow-hidden shadow-sm mb-6">
+            <div className="h-56 md:h-auto bg-oat-milk">
+              <img
+                src={featured.image}
+                alt={featured.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-6 md:p-8 flex flex-col gap-4">
+              <div>
+                <h3 className="text-3xl text-heading">{featured.title}</h3>
+                <span className="text-ink-muted text-sm">{featured.date}</span>
               </div>
+              <p className="text-ink text-sm md:text-base leading-relaxed">
+                {featured.description}
+              </p>
+              <ToolPills tools={featured.tools} />
+              <LinkButtons links={featured.links} />
+            </div>
+          </article>
+
+          {/* remaining projects: 2-column grid, one column on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {rest.map((project) => (
+              <article
+                key={project.title}
+                className="flex flex-col bg-cream border border-line rounded-3xl overflow-hidden shadow-sm"
+              >
+                <div className="h-48 bg-oat-milk">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="p-6 flex flex-col gap-3 flex-1">
+                  <div>
+                    <h3 className="text-2xl text-heading">{project.title}</h3>
+                    <span className="text-ink-muted text-sm">{project.date}</span>
+                  </div>
+                  <p className="text-ink text-sm leading-relaxed">{project.description}</p>
+                  <ToolPills tools={project.tools} />
+                  <LinkButtons links={project.links} />
+                </div>
+              </article>
             ))}
           </div>
-       
         </section>
-      </motion.section> 
+      </motion.section>
     </div>
   );
 }
